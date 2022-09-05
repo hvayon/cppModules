@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 20:33:20 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/05 21:00:10 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/05 23:18:35 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 class PhoneBook {
     
-    char arrey[8];
-    int contacts = 8;
+    public:
+    
+    PhoneBook( void );
+    ~PhoneBook( void );
 };
 
 #endif
