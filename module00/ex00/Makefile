@@ -1,5 +1,7 @@
 SRCS = megaphone.cpp
 
+OBJC = $(SRCS:.cpp=.o)
+
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = megaphone 
@@ -8,8 +10,14 @@ CC = c++
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) $(SRCS) -o $@
+$(NAME): $(OBJC)
+	$(CC) $(FLAGS) $(OBJC) -o $@
+
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean: 
+	rm -f $(OBJC)
 
 fclean: clean
 	rm -f $(NAME)
