@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 20:33:20 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/05 23:18:35 by natalia          ###   ########.fr       */
+/*   Created: 2022/09/06 20:24:33 by hvayon            #+#    #+#             */
+/*   Updated: 2022/09/06 21:09:11 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 class PhoneBook {
     
-    public:
+public:
     
     PhoneBook( void );
     ~PhoneBook( void );
+
+    void    AddContact( void );
+    
 };
 
 #endif
