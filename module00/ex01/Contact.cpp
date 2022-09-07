@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 20:24:27 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/07 12:57:14 by natalia          ###   ########.fr       */
+/*   Created: 2022/09/07 12:32:36 by natalia           #+#    #+#             */
+/*   Updated: 2022/09/07 12:54:06 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include <iostream>
 
-int main() {
-
-    std::string cmd;
-    std::cin >> cmd;
-    PhoneBook phones;
-    Contact contacts; // при создании класса вызываются конструктор и деструктор
+Contact::Contact( void ) {
     
-    if (cmd == "ADD") {
-        
-        phones.AddContact();
+    std::cout << "Constructor called" << std::endl; // удалить
+    return;
+}
 
-    }
-
-    if (cmd == "SEARCH") {
-        
-        phones.SearchContact();
-
-    }
-
-    return 0;
+Contact::~Contact( void ) {
+    
+    std::cout << "Destructor called" << std::endl; // удалить
+    return;
 }

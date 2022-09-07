@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 20:24:19 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/06 21:08:28 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/07 12:54:25 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "PhoneBook.hpp"
+#include <iostream>
 
 PhoneBook::PhoneBook( void ) {
 
@@ -34,4 +34,17 @@ void    PhoneBook::AddContact( void ) { //написать тут функцию
      std::cout << "Enter your phone number:" << std::endl;
      std::cout << "Enter your darkest secret:" << std::endl;
      return;
+}
+
+void    PhoneBook::SearchContact( void ) { 
+
+    std::cout.width(10);
+    std::cout << "Index|";
+    std::cout.width(10);
+    std::cout << "First name|";
+    std::cout.width(10);
+    std::cout << "Last name|";
+    std::cout.width(10);
+    std::cout << "Nickname|" << std::endl;
+    return;
 }

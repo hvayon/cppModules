@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 20:24:33 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/07 12:38:19 by natalia          ###   ########.fr       */
+/*   Created: 2022/09/07 12:32:26 by natalia           #+#    #+#             */
+/*   Updated: 2022/09/07 12:50:09 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+# include <string>
 
-class PhoneBook {
+class Contact {
     
-public:
-    
-    PhoneBook( void );
-    ~PhoneBook( void );
+    public:
 
-    void    AddContact( void );
-    void    SearchContact( void );
-    
+        Contact( void );
+        ~Contact( void );
+
+    private:
+
+        std::string _firstName;
+        std::string _lastName;
+        std::string _nickName;
+        std::string _phoneNumber;
+        std::string _darkestSecret;
+        
 };
 
 #endif
