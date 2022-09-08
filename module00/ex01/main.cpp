@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 20:24:27 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/07 12:57:14 by natalia          ###   ########.fr       */
+/*   Updated: 2022/09/07 21:29:15 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,22 @@
 int main() {
 
     std::string cmd;
-    std::cin >> cmd;
-    PhoneBook phones;
-    Contact contacts; // при создании класса вызываются конструктор и деструктор
+    PhoneBook phones; 
+    Contact contacts; //  удалить
     
-    if (cmd == "ADD") {
-        
-        phones.AddContact();
-
-    }
-
-    if (cmd == "SEARCH") {
-        
-        phones.SearchContact();
-
+    while(1) {
+        std::cout << "Enter command: ";
+        std::cin >> cmd;
+        if (std::cin.fail())
+            exit(1);
+        if (cmd == "ADD")
+            phones.AddContact();
+        else if (cmd == "SEARCH")
+            phones.SearchContact();
+        else if (cmd == "EXIT")
+            return (0);
+        else
+            std::cout << "Invalid command" << std::endl; 
     }
 
     return 0;
