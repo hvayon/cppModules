@@ -18,22 +18,22 @@ int main() {
 
     std::string cmd;
     PhoneBook phones; 
-    Contact contacts; //  удалить
     
     while(1) {
         std::cout << "Enter command: ";
-        std::cin >> cmd;
+        getline(std::cin, cmd);
         if (std::cin.fail())
             exit(1);
         if (cmd == "ADD")
-            phones.AddContact();
+            phones.addContact();
         else if (cmd == "SEARCH")
-            phones.SearchContact();
+            phones.searchContact();
         else if (cmd == "EXIT")
             return (0);
         else
-            std::cout << "Invalid command" << std::endl; 
+            std::cout << "WRONG COMMAND" << std::endl; 
     }
+    std::cin.clear();
 
     return 0;
 }

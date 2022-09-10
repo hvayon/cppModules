@@ -27,12 +27,13 @@ public:
     private:
 
     const static int _maxContacts = 8;
-    const static int _fieldNumber = 5;
+    const static int _columnNumber = 5;
     int             _index;
     int			    _totalContacts;
-    Contact         contacts[_maxContacts];
+    Contact         _contacts[_maxContacts];
     void            _getIndex( void );
-    void            _fillContact(const std::string str[_fieldNumber]);
+    void            _fillContact(const std::string str[_columnNumber]);
+    void            _displayContact(std::string str) const;
 };
 
 #endif

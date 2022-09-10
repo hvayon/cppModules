@@ -14,13 +14,49 @@
 #include <iostream>
 
 Contact::Contact( void ) {
-    
-    std::cout << "Constructor called" << std::endl; // удалить
     return;
 }
 
 Contact::~Contact( void ) {
-    
-    std::cout << "Destructor called" << std::endl; // удалить
     return;
+}
+
+void    Contact::setFirstName(const std::string &firstName) {
+    this->_firstName = firstName;
+}
+
+std::string Contact::getFirstName() const {
+    return _firstName;
+}
+
+void    Contact::setLastName(const std::string &lastName) {
+    this->_lastName = lastName;
+}
+
+std::string Contact::getLastName() const {
+    return _lastName;
+}
+
+void    Contact::setNickName(const std::string &nickName) {
+    this->_nickName = nickName;
+}
+
+std::string Contact::getNickName() const {
+    return _nickName;
+}
+
+void    Contact::setPhoneNumber(const std::string &phoneNumber) {
+    this->_phoneNumber = phoneNumber;
+}
+
+std::string Contact::getPhoneNumber() const {
+    return _phoneNumber;
+}
+
+void    Contact::setDarkestSecret(const std::string &darkestSecret) {
+    this->_darkestSecret = darkestSecret;
+}
+
+std::string Contact::getDarkestSecret() const {
+    return _nickName;
 }
