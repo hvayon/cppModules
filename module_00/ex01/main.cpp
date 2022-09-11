@@ -21,7 +21,7 @@ int main() {
     
     while(1) {
         std::cout << "Enter command: ";
-        getline(std::cin, cmd);
+        std::cin >> cmd;
         if (std::cin.fail())
             exit(1);
         if (cmd == "ADD")

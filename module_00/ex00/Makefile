@@ -1,4 +1,4 @@
-SRCS = megaphone.cpp
+SRCS = $(wildcard *.cpp)
 
 OBJC = $(SRCS:.cpp=.o)
 
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJC)
 	$(CC) $(FLAGS) $(OBJC) -o $@
 
-%.o: %.cpp
+%.o: %.cpp $(wildcard $(HEAD)/*.hpp)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean: 

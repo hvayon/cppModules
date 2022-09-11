@@ -1,10 +1,10 @@
-SRCS = PhoneBook.cpp main.cpp Contact.cpp
+SRCS = $(wildcard *.cpp)
 
 OBJC = $(SRCS:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = phonebook 
+NAME = operations 
 
 CC = c++
 
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJC)
 	$(CC) $(FLAGS) $(OBJC) -o $@
 
-%.o: %.cpp
+%.o: %.cpp $(wildcard $(HEAD)/*.hpp)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean: 

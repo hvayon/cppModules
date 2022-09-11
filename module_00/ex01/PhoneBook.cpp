@@ -99,7 +99,7 @@ void    PhoneBook::searchContact( void ) {
 		std::cout << "Last name: " << _contacts[id - 1].getLastName() << std::endl;
 		std::cout << "Nickname: " << _contacts[id - 1].getNickName() << std::endl;
 		std::cout << "Phone number: " << _contacts[id - 1].getPhoneNumber() << std::endl;
-		std::cout << "Dark secret: " << _contacts[id - 1].getDarkestSecret() << std::endl;
+		std::cout << "Darkest secret: " << _contacts[id - 1].getDarkestSecret() << std::endl;
 	}
     return;
 }
