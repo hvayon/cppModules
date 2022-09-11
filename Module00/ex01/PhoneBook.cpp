@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 20:24:19 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/07 23:02:15 by natalia          ###   ########.fr       */
+/*   Updated: 2022/09/11 19:57:51 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PhoneBook::~PhoneBook( void ) {
     return;
 }
 
-void    PhoneBook::addContact( void ) { //написать тут функцию add
+void    PhoneBook::addContact( void ) {
     std::string str[_columnNumber];
     std::cout << "Enter your first name: ";
     std::cin >> str[0];
@@ -87,7 +87,6 @@ void    PhoneBook::searchContact( void ) {
 			exit(1);
 		std::cerr << "Wrong index!" << std::endl;
 		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		return ;
 	}
 	else {
