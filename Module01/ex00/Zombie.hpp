@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 19:46:23 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/11 20:56:49 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/12 20:13:34 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class Zombie {
     public:
         Zombie(std::string name);
         ~Zombie( void );
-        void announce( void ); // кричит BraiiiiiiinnnzzzZ... Назвать как-то зомби
+        void    announce( void );
         Zombie* newZombie( std::string name );
-        void randomChump( std::string name );
+        void    randomChump( std::string name );
 
     private:
         std::string _name;

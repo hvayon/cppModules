@@ -6,13 +6,19 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 19:46:20 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/11 21:03:58 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/12 20:44:05 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( std::string name ) {
+Zombie::Zombie (std::string name) : _name(name) {}
+
+Zombie::Zombie( void ) {
+    return;
+}
+
+void Zombie::newName( std::string name ) {
     this->_name = name;
 }
 
