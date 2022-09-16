@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 20:51:33 by natalia           #+#    #+#             */
-/*   Updated: 2022/09/15 21:25:56 by natalia          ###   ########.fr       */
+/*   Created: 2022/09/16 16:32:57 by natalia           #+#    #+#             */
+/*   Updated: 2022/09/16 19:16:46 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <string>
-# include <iostream>
+#include <iostream>
 
-class Weapon{
+class Harl {
     
     private:
-        std::string _weapon;
-    
-    public: 
-        Weapon(std::string _weapon);
-        ~Weapon( void );
-        const   std::string& getType(void) const;
-        void    setType(const std::string& type);
-};
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
+        static const std::string commands[4];
+        void (Harl::*message[4])( void );
 
+    public:
+        Harl( void );
+        ~Harl( void );
+        void complain( std::string level );
+};
 
 #endif

@@ -5,34 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 21:09:30 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/15 22:36:50 by natalia          ###   ########.fr       */
+/*   Created: 2022/09/16 17:22:20 by natalia           #+#    #+#             */
+/*   Updated: 2022/09/16 19:22:40 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-int main()
-{
-    {
-        Weapon club = Weapon("crude spiked club");
-
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
+int	main(int argc, char **argv) {
+    Harl harl;
+    if (argc != 2) {
+        std::cout << "Wrong number of args" << std::endl;
+		return (1);
     }
-    {
-        Weapon club = Weapon("crude spiked club");
-
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
-    }
-    return 0;
+    harl.complain(argv[1]);
 }
- 

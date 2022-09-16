@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 23:09:25 by natalia           #+#    #+#             */
-/*   Updated: 2022/09/15 23:24:18 by natalia          ###   ########.fr       */
+/*   Created: 2022/09/07 12:32:36 by natalia           #+#    #+#             */
+/*   Updated: 2022/09/16 16:22:04 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Replace.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -37,12 +35,12 @@ int	main(int argc, char **argv) {
 	file = argv[1];
 	inFile.open(file);
 	if (!inFile.is_open()) {
-		std::cout << "Unable to open input file" << std::endl;
+		std::cout << "The input file cannot be opened" << std::endl;
 		return (1);
 	}
 	outFile.open(file + ".replace");
 	if (!outFile.is_open()) {
-		std::cout << "Unable to open output file" << std::endl;
+		std::cout << "The output file cannot be opened" << std::endl;
 		inFile.close();
 		return (1);
 	}
