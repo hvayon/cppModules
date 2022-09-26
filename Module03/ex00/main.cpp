@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:38 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/26 21:11:54 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/26 21:13:51 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int main(void) {
     Clap.attack("Nino");
     // takeDamage(10);
     // beRepaired(5);
-    // total;
+    //написать функцию total;
 }
