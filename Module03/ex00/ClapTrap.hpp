@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:44 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/26 21:05:11 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/27 19:10:52 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ class ClapTrap {
 		unsigned int	getAttackDamage() const;
 		void			setAttackDamage(unsigned int attackDamage);
 		
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void			attack(const std::string& target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+
+		void			total(void);
 };
 
 

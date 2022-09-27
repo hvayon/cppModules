@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:46 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/26 21:05:40 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/27 19:21:06 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,13 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << _name << " got repaired: " << amount << ". Total hp: " << _hp << std::endl;
 	}
 
+}
+
+void ClapTrap::total(void) {
+	std::cout << "---------------------------------------" << std::endl;
+	std::cout << "ClapTrap name : " << _name << std::endl;
+	std::cout << _name << " Health point : " << _hp << std::endl;
+	std::cout << _name << " Damage level : " << _attackDamage << std::endl;
+	std::cout << _name << " Energy point : " << _energy << std::endl;
+	std::cout << "---------------------------------------" << std::endl;
 }
