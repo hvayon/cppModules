@@ -4,7 +4,7 @@ OBJC = $(SRCS:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 CC = c++
 
