@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 20:17:52 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/28 21:56:30 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/29 11:23:11 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "ClapTrap.hpp"
 
 
-class ScavTrap : public ClapTrap
-{
+class ScavTrap : public ClapTrap {
 	public:
 		ScavTrap();
 		ScavTrap(ScavTrap const &); 

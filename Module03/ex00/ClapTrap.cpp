@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:46 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/27 19:21:06 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/29 11:46:43 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &op) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout <<  "ClapTrap " << _name << " removed" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name) {

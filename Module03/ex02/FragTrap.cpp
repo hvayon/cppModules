@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 21:54:31 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/28 22:12:31 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/09/29 11:37:55 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void FragTrap::attack(const std::string& target) {
 }
 
 void FragTrap::highFivesGuys() {
-	std::cout << "FragTrap " << _name << "High five guys!" << std::endl;
+	std::cout << "FragTrap " << _name << ": High five guys!" << std::endl;
 }
 
 void FragTrap::total(void) {
