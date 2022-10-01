@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 21:54:31 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/01 14:59:12 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/01 14:59:22 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void FragTrap::highFivesGuys() {
 
 void FragTrap::total(void) {
 	std::cout << "---------------------------------------" << std::endl;
-	std::cout << "ScavTrap name : " << _name << std::endl;
+	std::cout << "FragTrap name : " << _name << std::endl;
 	std::cout << _name << " Health point : " << _hp << std::endl;
 	std::cout << _name << " Damage level : " << _attackDamage << std::endl;
 	std::cout << _name << " Energy point : " << _energy << std::endl;

@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:38 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/29 11:22:15 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/01 12:49:15 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ int main(void) {
     c1.setAttackDamage(2);
     c2.setAttackDamage(3);
     c1.attack(s2);
-    c1.takeDamage(c1.getAttackDamage());
-    c2.attack(s2);
-    c2.takeDamage(c2.getAttackDamage());
+    c2.takeDamage(c1.getAttackDamage());
+    c2.attack(s1);
+    c1.takeDamage(c2.getAttackDamage());
     std::cout << std::endl;
     c1.total();
     c2.total();
 
-    std::cout << std::endl;
+    std::cout << std::endl << "!!! Kill !!!" << std::endl;
     c3.setAttackDamage(10);
-    c3.takeDamage(c1.getAttackDamage());
     c3.attack(s2);
+    c2.takeDamage(c3.getAttackDamage());
     std::cout << std::endl;
     c1.total();
     c2.total();

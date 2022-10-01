@@ -6,14 +6,14 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:46 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/01 14:58:20 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/01 14:58:01 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : _name("ClapTrap"), _hp(10), _energy(10), _attackDamage(0) {
-	std::cout << "Created a noname ClapTrap with default constructor" << std::endl;
+	std::cout << "Created a ClapTrap with default constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy) {

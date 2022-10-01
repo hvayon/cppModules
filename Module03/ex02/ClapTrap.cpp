@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:46 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/28 22:09:04 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/01 14:58:11 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ ClapTrap::ClapTrap() : _name("ClapTrap"), _hp(10), _energy(10), _attackDamage(0)
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy Constructor called of ClapTrap" << std::endl;
 	*this = copy;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &op) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called of ClapTrap" << std::endl;
     _name = op.getName();
 	_hp = op.getHp();
 	_energy = op.getEnergy();

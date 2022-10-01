@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 20:17:56 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/28 21:48:39 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/01 14:58:58 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,16 @@ ScavTrap::ScavTrap() {
     _attackDamage = 0;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap::ClapTrap(copy) {}
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy._name)
+{
+	_hp = copy._hp;
+	_energy = copy._energy;
+	_attackDamage = copy._attackDamage;
+	std::cout << "Copy Constructor called of ScavTrap " << this->_name << std::endl;
+}
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &op) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called of ScavTrap" << std::endl;
     _name = op.getName();
 	_hp = op.getHp();
 	_energy = op.getEnergy();

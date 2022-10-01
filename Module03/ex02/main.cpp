@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 19:12:38 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/29 11:49:51 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/01 12:51:29 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int main(void) {
 	c2.total();
     std::cout << std::endl;
 
-    std::cout << std::endl << "!!! Attack without damage !!!" << std::endl;
     std::cout << std::endl << "!!! use base (ClapTrap) method setAttackDamage !!!" << std::endl;
     c1.setAttackDamage(5);
     c1.attack(s2);
