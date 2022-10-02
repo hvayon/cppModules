@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 12:55:18 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/01 15:17:07 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/02 16:21:59 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ DiamondTrap::DiamondTrap() {
 	this->_name = "DiamondTrap";
 	setHp(FragTrap::_hp); 
 	setEnergy(ScavTrap::_energy);
-	setAttackDamage(FragTrap::_attackDamage);
+	setAttackDamage(FragTrap::_attackDamage); //чек
 	std::cout << "Created a DiamondTrap with default constructor" << std::endl;
 }
 
@@ -25,9 +25,6 @@ DiamondTrap::DiamondTrap(const std::string name) {
 	std::cout << "A new DiamondTrap created : " << _name << std::endl;
 	ClapTrap::_name = name + "_clap_name";
 	this->_name = name;
-	setHp(FragTrap::_hp);
-	setEnergy(ScavTrap::_energy);
-	setAttackDamage(FragTrap::_attackDamage);
 }
 
 DiamondTrap::~DiamondTrap(void) {
