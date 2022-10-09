@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:40:28 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/09 11:46:44 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/09 12:29:50 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public Animal {
   		Cat();
 		Cat(Cat const &);
 		Cat& operator=(Cat const &);
-		virtual ~Cat();
+		~Cat();
 
 	    void makeSound(void) const;
 };

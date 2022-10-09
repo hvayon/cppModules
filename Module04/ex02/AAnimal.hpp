@@ -5,30 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 19:20:03 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/08 20:31:12 by hvayon           ###   ########.fr       */
+/*   Created: 2022/10/09 11:34:57 by hvayon            #+#    #+#             */
+/*   Updated: 2022/10/09 20:58:43 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class Animal{
+class AAnimal {
     protected:
         std::string _name;
     public: 
-  		Animal();
-		Animal(Animal const &);
-		Animal& operator=(Animal const &);
-		~Animal();  //virtual
+  		AAnimal();
+		AAnimal(AAnimal const &);
+		AAnimal& operator=(AAnimal const &);
+		virtual ~AAnimal();
 
-        Animal(std::string name);
+        AAnimal(std::string name);
 
         std::string	getType(void) const;
-	    void makeSound(void) const; //virtual
+	    virtual void makeSound(void) const = 0;
 };
-
 #endif

@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 19:19:53 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/08 20:20:36 by hvayon           ###   ########.fr       */
+/*   Created: 2022/10/09 12:32:25 by hvayon            #+#    #+#             */
+/*   Updated: 2022/10/09 12:35:09 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal() {
+WrongAnimal::WrongAnimal() : _name("Animal"){
     std::cout << "Default constructor of Animal class" << std::endl;
 }
 
-Animal::~Animal() {
+WrongAnimal::~WrongAnimal() {
     std::cout << "Animal class removed" << std::endl;
 }
 
 /* Overload */
-Animal& Animal::operator=(Animal const &op){
+WrongAnimal& WrongAnimal::operator=(WrongAnimal const &op){
     this->_name = op._name;
 	return (*this);
 }
 
 
-Animal::Animal(const Animal &copy)
+WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
 	std::cout << "Copy Animal constructor called" << std::endl;
     *this = copy;
 }
 
-Animal::Animal(std::string name)
+WrongAnimal::WrongAnimal(std::string name)
 {
-	this->_name = name;
 	std::cout << "Field Animal constructor called" << std::endl;
+	this->_name = name;
 }
 
-std::string	Animal::getType(void) const {
+std::string	WrongAnimal::getType(void) const {
     return(_name);
 }
 
-void Animal::makeSound(void) const {
+void WrongAnimal::makeSound(void) const {
     std::cout << "MUTE!" << std::endl;
 }
