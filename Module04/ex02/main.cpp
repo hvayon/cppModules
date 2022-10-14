@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:39:45 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/09 21:03:23 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/10 20:16:33 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int main() {
 	o->getBrain()->setIdeas("FOO");
 	o->getBrain()->printIdeas();
 
+	/* ERROR */
 	// AAnimal dd(*c);
 	// dd.makeSound();
 	// std::cout << dd.getType() << std::endl;

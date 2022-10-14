@@ -109,6 +109,9 @@
     "*.tcc": "cpp",
     "memory_resource": "cpp",
     "ranges": "cpp",
-    "stop_token": "cpp"
+    "stop_token": "cpp",
+    "__functional_03": "cpp",
+    "filesystem": "cpp",
+    "*.tpp": "cpp"
   }
 }

@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 20:24:27 by hvayon            #+#    #+#             */
-/*   Updated: 2022/09/11 15:33:34 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/08 18:39:38 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main() {
     while(1) {
         std::cout << "Enter command: ";
         std::cin >> cmd;
+        //getline(cmd, std::cin);
         if (std::cin.fail())
             exit(1);
         if (cmd == "ADD")
