@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:36:11 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/14 21:53:45 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/16 16:03:38 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
 
 Bureaucrat::Bureaucrat(const std::string& name, const int& grade) : _name(name)
 {
+	std::cout << "Create Bureacrat " << getName() << std::endl;
 	if (grade > MINGRADE)
 		throw Bureaucrat::GradeTooLowException();
 	else if (grade < MAXGRADE)
@@ -57,12 +58,12 @@ const int&    Bureaucrat::getGrade(void) const{
     return _grade;
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
+const char* Bureaucrat::GradeTooHighException:: what() const throw()
 {
 	return "Bureaucrat grade too high";
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw()
+const char* Bureaucrat::GradeTooLowException:: what() const throw()
 {
 	return "Bureaucrat grade too low";
 }
@@ -84,6 +85,6 @@ void	Bureaucrat::decrementGrade(void)
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& b) {
-    o << b.getName() << ", bureaucrat grade " << b.getGrade();
+    o << b.getName() << ", bureaucrat grade " << b.getGrade() << std::endl;
     return(o);
 }

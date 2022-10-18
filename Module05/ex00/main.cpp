@@ -6,13 +6,11 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 21:50:58 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/15 14:59:42 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/16 13:05:07 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-// переписать
 
 void	createB(const std::string& name, const int& grade)
 {
@@ -23,7 +21,7 @@ void	createB(const std::string& name, const int& grade)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 }
 
@@ -36,7 +34,7 @@ void	upgradeB(Bureaucrat b, void (Bureaucrat::*f)(void))
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}	
 }
 
@@ -52,7 +50,7 @@ int main(void)
 	upgradeB(b, &Bureaucrat::decrementGrade);
 	std::cout << std::endl;
 
-	createB("Munk", 0);
+	createB("Mink", 0);
 	std::cout << std::endl;
 
 	upgradeB(b, &Bureaucrat::incrementGrade);

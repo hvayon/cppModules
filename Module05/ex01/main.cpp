@@ -6,55 +6,56 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 21:50:58 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/15 14:59:42 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/16 15:41:09 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-// переписать
-
-void	createB(const std::string& name, const int& grade)
+int	main(void)
 {
+	Bureaucrat soon("Soon", 52);
+	Bureaucrat moon("Moon", 47);
+	Form form1("Standart form", 50, 20);
+
+	std::cout << "<<BAD FORM CREATION>>" << std::endl;
 	try
 	{
-		Bureaucrat b(name, grade);
-		std::cout << b << std::endl;
+		Form form4("Incorrect form", -1, 20);
+		std::cout << form4 << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-}
-
-void	upgradeB(Bureaucrat b, void (Bureaucrat::*f)(void))
-{
+	std::cout << std::endl;
+	
+	std::cout << "<<BAD BUREAUCRAT CREATOR>>" << std::endl;
 	try
 	{
-		(b.*f)();
-		std::cout << b << std::endl;
+		Bureaucrat soon("Bad", -52);
+		std::cout << soon << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
-	}	
-}
-
-int main(void)
-{
-	Bureaucrat b("Syn", 150);
-	createB("Moon", 10);
+	}
 	std::cout << std::endl;
 
-	createB("Munk", 150);
+	std::cout << "<<Soon grade " << soon.getGrade() << " trying to sign form with grade " << form1.getSignLevel() << ">>" <<  std::endl;
+	soon.signForm(form1);
 	std::cout << std::endl;
 
-	upgradeB(b, &Bureaucrat::decrementGrade);
+	std::cout << "<<Moon grade " << moon.getGrade() << " trying to sign form with grade " << form1.getSignLevel() << ">>" <<  std::endl;
+	moon.signForm(form1);
 	std::cout << std::endl;
 
-	createB("Munk", 0);
+	std::cout << "<<Form info>>" << std::endl;
+	std::cout << form1 << std::endl;
 	std::cout << std::endl;
 
-	upgradeB(b, &Bureaucrat::incrementGrade);
+	std::cout << "<<Bureaucrat info>>" << std::endl;
+	std::cout << soon << std::endl;
 	std::cout << std::endl;
 }

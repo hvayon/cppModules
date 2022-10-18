@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:36:07 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/14 21:55:12 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/16 13:47:38 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Bureaucrat{
         Bureaucrat();
 		Bureaucrat(Bureaucrat const &);
 		Bureaucrat& operator=(Bureaucrat &);
-		virtual     ~Bureaucrat();
+		~Bureaucrat();
 
         Bureaucrat(const std::string& name, const int& grade);
         const std::string&  getName() const;

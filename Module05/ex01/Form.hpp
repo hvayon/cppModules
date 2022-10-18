@@ -6,30 +6,34 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:19:53 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/15 15:59:30 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/16 15:58:25 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include "Bureaucrat.hpp"
+# include <iostream>
+# include "Bureaucrat.hpp"
 
 class Form {
 	private:
 		std::string _name;
-		bool        _signed;
-		const int	_signatureAccessLevel;
-		const int	_executionAccessLevel;
+		bool        _sign;
+		const int	_signLevel;
+		const int	_execLevel;
 	public:
 	Form();
 	Form(Form const &);
-	Form& operator=(Form &);
-	virtual     ~Form();
+	Form & operator=(const Form &);
+	~Form();
 
-	Form(const std::string& name, const int& grade);
+	Form(const std::string& name, const int& signGrade, const int& exeGrade);
+
 	const std::string&  getName() const;
-	const int&          getGrade(void) const;
+	const bool&    		getSign() const;
+	const int&          getSignLevel() const;
+	const int&          getExecLevel() const;
 
 	class	GradeTooHighException : public std::exception {
 		const char* what() const throw();
@@ -37,10 +41,9 @@ class Form {
 	class	GradeTooLowException : public std::exception {
 		const char* what() const throw();
 	};
-	GradeTooHighException();
-	GradeTooLowException();
-	beSigned();
-	
+
+	void				beSigned(Bureaucrat&);
+
 };
 std::ostream& operator<<(std::ostream& o, const Form& b);
 
