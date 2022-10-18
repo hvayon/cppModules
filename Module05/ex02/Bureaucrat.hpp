@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:36:07 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/16 16:00:11 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/18 21:47:05 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define MINGRADE 150
 #define MAXGRADE 1
 
-class Form;
+class AForm;
 
 class Bureaucrat{
     private:
@@ -44,7 +44,7 @@ class Bureaucrat{
         const std::string&  getName() const;
         const int&          getGrade(void) const;
 
-		void				signForm(Form& a);
+		void				signForm(AForm& a);
 };
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& b);
 

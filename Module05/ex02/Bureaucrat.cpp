@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:36:11 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/16 16:03:26 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/18 21:44:47 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Bureaucrat"), _grade(150) {
     std::cout << "Default constructor of Bureaucrat class" << std::endl;
@@ -84,7 +84,7 @@ void	Bureaucrat::decrementGrade(void)
 		_grade++;
 }
 
-void	Bureaucrat::signForm(Form& a)
+void	Bureaucrat::signForm(AForm& a)
 {
 	try {
 		a.beSigned(*this);

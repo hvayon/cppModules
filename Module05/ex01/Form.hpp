@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:19:53 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/16 15:58:25 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/18 22:44:50 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Form {
 	private:
-		std::string _name;
+		const std::string _name;
 		bool        _sign;
 		const int	_signLevel;
 		const int	_execLevel;

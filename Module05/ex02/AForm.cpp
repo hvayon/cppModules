@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:19:56 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/16 16:03:08 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/18 22:44:29 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : _name("Unsigned"), _sign(false), _signLevel(150), _execLevel(150) {
-	std::cout << "Default constructor of Form class" << std::endl;
+AForm::AForm() : _name("Unsigned"), _sign(false), _signLevel(150), _execLevel(150) {
+	//std::cout << "Default constructor of AForm class" << std::endl;
 }
 
-Form::~Form() {
-	std::cout << "Form class removed" << std::endl;
+AForm::~AForm() {
+	std::cout << "AForm class removed" << std::endl;
 }
 
-Form::Form(const Form &copy) : _name(copy.getName()), _sign(copy.getSign()),\
+AForm::AForm(const AForm &copy) : _name(copy.getName()), _sign(copy.getSign()),\
 							_signLevel(copy.getSignLevel()), \
 							_execLevel(copy.getExecLevel()) {
 	std::cout << "Copy Form constructor called" << std::endl;
@@ -30,49 +30,53 @@ Form::Form(const Form &copy) : _name(copy.getName()), _sign(copy.getSign()),\
 		throw Bureaucrat::GradeTooHighException();
 }
 
-Form & Form::operator=(const Form & assign)
+AForm & AForm::operator=(const AForm & assign)
 {
 	this->_sign = assign.getSign();
 	return (*this);
 }
 
-Form::Form(const std::string& name, const int& signGrade, const int& exeGrade) : _name(name), _sign(false), _signLevel(signGrade), _execLevel(exeGrade)
+AForm::AForm(const std::string& name, const int& signGrade, const int& exeGrade) : _name(name), _sign(false), _signLevel(signGrade), _execLevel(exeGrade)
 {
 	if (_signLevel < MAXGRADE || _execLevel < MAXGRADE)
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	else if (_signLevel> MINGRADE || _execLevel > MINGRADE)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 }
 
 /* Getters */
 
-const std::string& Form::getName() const{
+const std::string& AForm::getName() const{
 	return _name;
 }
 
-const bool&    Form::getSign() const{
+const std::string& AForm::getTarget() const{
+	return _target;
+}
+
+const bool&    AForm::getSign() const{
 	return _sign;
 }
 
-const int&	Form::getSignLevel() const{
+const int&	AForm::getSignLevel() const{
 	return _signLevel;
 }
 
-const int&	Form::getExecLevel() const{
+const int&	AForm::getExecLevel() const{
 	return _execLevel;
 }
 
-const char* Form::GradeTooHighException:: what() const throw()
+const char* AForm::GradeTooHighException:: what() const throw()
 {
-	return "Form grade too high";
+	return "AForm grade too high";
 }
 
-const char* Form::GradeTooLowException:: what() const throw()
+const char* AForm::GradeTooLowException:: what() const throw()
 {
-	return "Form grade too low";
+	return "AForm grade too low";
 }
 
-std::ostream& operator<<(std::ostream& o, const Form& b) {
+std::ostream& operator<<(std::ostream& o, const AForm& b) {
 	o << "Name: " << b.getName() << std::endl;
 	o << "Sign grade: " << b.getSignLevel() << std::endl;
 	o << "Exec grade: " << b.getExecLevel() << std::endl; 
@@ -80,11 +84,9 @@ std::ostream& operator<<(std::ostream& o, const Form& b) {
 	return(o);
 }
 
-void	Form::beSigned(Bureaucrat& b){
+void	AForm::beSigned(Bureaucrat& b){
 	if (b.getGrade() <= _signLevel)
 		_sign = true;
 	else
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 }
-
-//сделать функцию подпись
