@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:19:53 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/18 22:43:47 by natalia          ###   ########.fr       */
+/*   Updated: 2022/10/20 22:12:59 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm {
 	AForm & operator=(const AForm &);
 	virtual ~AForm();
 
-	AForm(const std::string& name, const int& signGrade, const int& exeGrade);
+	AForm(const std::string& name, const int& _signLevel, const int& _execLevel, const std::string& target);
 
 	const std::string&  getName() const;
 	const std::string&  getTarget() const;
