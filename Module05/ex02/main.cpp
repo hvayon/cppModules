@@ -3,19 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 21:50:58 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/20 22:18:20 by natalia          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:17:02 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main(void)
 {
 	Bureaucrat soon("Soon", 52);
-	AForm form1("Standart form", 50, 20);
+	AForm *f1 = new ShrubberyCreationForm("Home");
+	soon.executeForm(*f1);
+	//action();
 	
 }

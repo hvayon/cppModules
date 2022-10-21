@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:19:53 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/20 22:12:59 by natalia          ###   ########.fr       */
+/*   Updated: 2022/10/21 19:52:50 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,13 @@ class AForm {
 	class	GradeTooLowException : public std::exception {
 		const char* what() const throw();
 	};
+	class	FormNotSigned : public std::exception  {
+		const char* what() const throw();
+	};
 
 	void				beSigned(Bureaucrat&);
+	void				execute(const Bureaucrat& executor) const;
+	virtual void		action(void) const = 0;
 
 };
 std::ostream& operator<<(std::ostream& o, const AForm& b);

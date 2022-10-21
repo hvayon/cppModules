@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:19:56 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/18 22:44:29 by natalia          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:02:07 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ AForm & AForm::operator=(const AForm & assign)
 	return (*this);
 }
 
-AForm::AForm(const std::string& name, const int& signGrade, const int& exeGrade) : _name(name), _sign(false), _signLevel(signGrade), _execLevel(exeGrade)
+AForm::AForm(const std::string& name, const int& signLevel, const int& execLevel, const std::string& target) \
+		 : _name(name), _target(target), _sign(false), _signLevel(signLevel), _execLevel(execLevel)
 {
 	if (_signLevel < MAXGRADE || _execLevel < MAXGRADE)
 		throw AForm::GradeTooHighException();
@@ -76,6 +77,11 @@ const char* AForm::GradeTooLowException:: what() const throw()
 	return "AForm grade too low";
 }
 
+const char* AForm::FormNotSigned::what() const throw()
+{
+	return "Form not signed";
+}
+
 std::ostream& operator<<(std::ostream& o, const AForm& b) {
 	o << "Name: " << b.getName() << std::endl;
 	o << "Sign grade: " << b.getSignLevel() << std::endl;
@@ -89,4 +95,14 @@ void	AForm::beSigned(Bureaucrat& b){
 		_sign = true;
 	else
 		throw AForm::GradeTooHighException();
+}
+
+
+void	AForm::execute(const Bureaucrat& executor) const {
+	if (!_sign)
+		throw AForm::FormNotSigned();
+	else if (executor.getGrade() > this->_signLevel)
+		throw AForm::GradeTooHighException();
+	else
+		action();
 }

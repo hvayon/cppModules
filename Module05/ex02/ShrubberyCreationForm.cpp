@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:14:47 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/20 22:14:35 by natalia          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:13:52 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,26 @@ void	ShrubberyCreationForm::action(void) const {
 
     if (!file)
         return ;
-    std::string tree = "\n\ 
-                ccee88oo\n\
-        C8O8O8Q8PoOb o8oo\n\
-        dOB69QO8PdUOpugoO9bD\n\
-        CgggbU8OU qOp qOdoUOdcb\n\
-            6OuU  /p u gcoUodpP\n\
-            \\\//  /douUP\n\
-                \\\////\n\
-                |||/\\n\
-                |||\/\n\
-                |||||\n\
-        .....//||||\....\n";
+    std::string tree = "\n\
+                # #### ####\n\
+            ### //#|### |/####\n\
+            ##//#/ /||/##/_/##/_#\n\
+            ###  //###|/ // # ###\n\
+        ##_/_#/_/## | #/###_/_####\n\
+        ## #### # / #| /  #### ##/##\n\
+        __#_--###`  |{,###---###-~\n\
+                    / }{\n\
+                    }}{\n\
+                    }}{\n\
+                     {{}\n\
+            , -=-~{ .-^- _\n\
+                    `}\n\
+                    {\n";
     std::cout << tree;
     file.close();
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& assign)
-{
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& assign){
 	(void)assign;
 	return (*this);
 }

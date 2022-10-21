@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:36:07 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/18 21:47:05 by natalia          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:03:37 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Bureaucrat{
         const int&          getGrade(void) const;
 
 		void				signForm(AForm& a);
+		void				executeForm(AForm const& a) const;
 };
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& b);
 
