@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:36:11 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/21 19:24:45 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/22 16:11:05 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ void	Bureaucrat::executeForm(AForm const & form) const
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << _name << " can't execute form " << form << ". Reason: " << e.what() << std::endl;
+		std::cerr << _name << " can't execute form " << form << "Reason: " << e.what() << std::endl;
 	}
 }

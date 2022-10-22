@@ -6,14 +6,13 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:19:56 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/21 20:02:07 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/22 17:09:51 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 AForm::AForm() : _name("Unsigned"), _sign(false), _signLevel(150), _execLevel(150) {
-	//std::cout << "Default constructor of AForm class" << std::endl;
 }
 
 AForm::~AForm() {
@@ -82,13 +81,11 @@ const char* AForm::FormNotSigned::what() const throw()
 	return "Form not signed";
 }
 
-std::ostream& operator<<(std::ostream& o, const AForm& b) {
-	o << "Name: " << b.getName() << std::endl;
-	o << "Sign grade: " << b.getSignLevel() << std::endl;
-	o << "Exec grade: " << b.getExecLevel() << std::endl; 
-	o << "Signed: " << std::boolalpha << b.getSign() << std::endl;
-	return(o);
+std::ostream& operator<<(std::ostream& o, const AForm& f) {
+	o << f.getName() << ". Sign grade: " << f.getSignLevel() << ". Exec grade: " << f.getExecLevel() << ". Signed: " << std::boolalpha << f.getSign();
+	return (o);
 }
+
 
 void	AForm::beSigned(Bureaucrat& b){
 	if (b.getGrade() <= _signLevel)

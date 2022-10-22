@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:14:47 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/21 20:13:52 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/22 15:59:29 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm(
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) : \
 	AForm(copy.getName(), copy.getSignLevel(), copy.getExecLevel(), copy.getTarget()) { }
+
+ShrubberyCreationForm::~ShrubberyCreationForm(){
+}
 
 void	ShrubberyCreationForm::action(void) const {
     std::ofstream file(this->getTarget() + "_shrubbery");
@@ -39,7 +42,7 @@ void	ShrubberyCreationForm::action(void) const {
             , -=-~{ .-^- _\n\
                     `}\n\
                     {\n";
-    std::cout << tree;
+    file << tree;
     file.close();
 }
 
