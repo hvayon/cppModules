@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:41:06 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/28 20:45:15 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/28 21:25:58 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Convert {
     public:
         Convert();
 		Convert(Convert const &);
-		Convert& operator=(Convert &);
+		Convert& operator=(Convert const &);
 		~Convert();
         
         Convert(const std::string &);
@@ -44,6 +44,6 @@ class Convert {
 	    float	getFloat(void) const;
 	    double	getDouble(void) const;	
 };
-std::ostream &operator<<(std::ostream &o, Convert &);
+std::ostream &operator<<(std::ostream &o, Convert const &);
 
 #endif

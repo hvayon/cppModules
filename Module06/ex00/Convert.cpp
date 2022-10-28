@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:41:03 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/28 20:54:32 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/28 21:32:14 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 Convert::Convert() : _err(false), _input(""), _val(0.0f) {
 	return ;
+}
+
+const char*	Convert::BadStrException::what() const throw()
+{
+	return "Wrong input!";
 }
 
 Convert::Convert (const std::string &input) : _err(false), _input(input), _val(0.0f) {
@@ -69,8 +74,7 @@ double	Convert::getDouble(void) const
 	return static_cast <double> (_val);
 }
 
-static void	printChar(std::ostream&	o, const Convert& c)
-{
+static void	printChar(std::ostream&	o, const Convert& c) {
 	o << "char: ";
 	if (std::isnan(c.getVal()) || std::isinf(c.getVal()) || \
 	c.getVal() > static_cast <double> (std::numeric_limits<char>::max()) || \
@@ -87,6 +91,62 @@ static void	printChar(std::ostream&	o, const Convert& c)
 	o << '\'' << c.getChar() << '\''<< std::endl;
 }
 
-// static void	printInt(std::ostream&	o, const Convert& c)
-// static void	printFloat(std::ostream&	o, const Convert& c)
-// static void	printDouble(std::ostream&	o, const Convert& c)
+static void	printInt(std::ostream&	o, const Convert& c) {
+	o << "int: ";
+	if (isnan(c.getVal()) || isinf(c.getVal()) || \
+	c.getVal() > static_cast <double> (std::numeric_limits<int>::max()) || \
+	c.getVal() < static_cast <double> (std::numeric_limits<int>::min())) \
+	{
+		o << "impossible" << std::endl;
+		return ;
+	}
+	o << c.getInt() << std::endl;
+}
+
+static void	printFloat(std::ostream&	o, const Convert& c) {
+	o << "float: ";
+	if (isnan(c.getFloat()) || isinf(c.getFloat())) {
+		o << std::showpos << c.getFloat() << "f" << std::endl;
+		return ;
+	}
+	if (floor(c.getVal()) == ceil(c.getVal())) //посмотреть что такое
+		o << c.getFloat() << ".0f" << std::endl;
+	else
+		o << c.getFloat() << "f" << std::endl;	
+}
+
+static void	printDouble(std::ostream& o, const Convert& c)
+{
+	o << "double: ";
+	if (std::isnan(c.getVal()) || std::isinf(c.getVal()))
+	{
+		o << std::showpos << c.getDouble() << std::endl;
+		return ;
+	}
+	if (floor(c.getVal()) == ceil(c.getVal()))
+		o << c.getDouble() << ".0" << std::endl;
+	else
+		o << c.getDouble() << std::endl;
+}
+
+Convert::~Convert() {
+	return ;
+}
+
+Convert& Convert::operator=(const Convert& assign)
+{
+	this->_err = assign.getErr();
+	this->_input = assign.getInput();
+	this->_val = assign.getVal();
+	return (*this);
+}
+
+std::ostream &operator<<(std::ostream &o, Convert const &c) {
+	if (c.getErr())
+		return o;
+	printChar(o, c);
+	printInt(o, c);
+	printFloat(o, c);
+	printDouble(o, c);
+	return o;
+}
