@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:41:03 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/28 21:32:14 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/29 13:03:06 by natalia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ const char*	Convert::BadStrException::what() const throw()
 Convert::Convert (const std::string &input) : _err(false), _input(input), _val(0.0f) {
 	try {
 		char *str = NULL;
-		if (std::isprint(_input[0]) && !std::isdigit(_input[0]) && _input[1] == '\0') //string
+		if (std::isprint(_input[0]) && !std::isdigit(_input[0]) && _input[1] == '\0')
 			_val = _input[0];
 		else {
-			_val = std::strtod(_input.c_str(), &str); //convert to double //c_str() convert to string
+			_val = std::strtod(_input.c_str(), &str);
 			if (_val == 0.0f &&\
 			(_input[0] != '+' && _input[0] != '-' && !std::isdigit(_input[0])))
 				throw Convert::BadStrException();
@@ -109,7 +109,7 @@ static void	printFloat(std::ostream&	o, const Convert& c) {
 		o << std::showpos << c.getFloat() << "f" << std::endl;
 		return ;
 	}
-	if (floor(c.getVal()) == ceil(c.getVal())) //посмотреть что такое
+	if (floor(c.getVal()) == ceil(c.getVal()))
 		o << c.getFloat() << ".0f" << std::endl;
 	else
 		o << c.getFloat() << "f" << std::endl;	
