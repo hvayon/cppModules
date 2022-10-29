@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:33:04 by natalia           #+#    #+#             */
-/*   Updated: 2022/10/29 19:26:52 by hvayon           ###   ########.fr       */
+/*   Created: 2022/10/29 18:56:12 by hvayon            #+#    #+#             */
+/*   Updated: 2022/10/29 18:56:31 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef B_HPP
+# define B_HPP
 
-# include <cstdlib>
-# include <iostream>
-# include <ctime>
+# include "Base.hpp"
 
-class Base
-{
-    public:
-	    virtual ~Base();
-};
+class B : public Base {};
 
 #endif

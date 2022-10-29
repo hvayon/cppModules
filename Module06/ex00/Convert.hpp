@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:41:06 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/28 21:25:58 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/10/29 20:42:01 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 # include <iostream>
 # include <cmath>
+# include <cstring>
 # include <cfloat>
-# include <limits.h>
+# include <limits>
+# include <cstdlib>
 
 class Convert {
     private:

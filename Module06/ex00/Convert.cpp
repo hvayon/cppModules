@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalia <natalia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:41:03 by hvayon            #+#    #+#             */
-/*   Updated: 2022/10/29 13:03:06 by natalia          ###   ########.fr       */
+/*   Updated: 2022/10/29 20:36:11 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static void	printChar(std::ostream&	o, const Convert& c) {
 
 static void	printInt(std::ostream&	o, const Convert& c) {
 	o << "int: ";
-	if (isnan(c.getVal()) || isinf(c.getVal()) || \
+	if (std::isnan(c.getVal()) || std::isinf(c.getVal()) || \
 	c.getVal() > static_cast <double> (std::numeric_limits<int>::max()) || \
 	c.getVal() < static_cast <double> (std::numeric_limits<int>::min())) \
 	{
@@ -105,7 +105,7 @@ static void	printInt(std::ostream&	o, const Convert& c) {
 
 static void	printFloat(std::ostream&	o, const Convert& c) {
 	o << "float: ";
-	if (isnan(c.getFloat()) || isinf(c.getFloat())) {
+	if (std::isnan(c.getFloat()) || std::isinf(c.getFloat())) {
 		o << std::showpos << c.getFloat() << "f" << std::endl;
 		return ;
 	}
