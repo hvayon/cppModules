@@ -1,31 +1,41 @@
-SRCS		=	$(wildcard *.cpp)			\
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/14 21:51:05 by hvayon            #+#    #+#              #
+#    Updated: 2022/11/03 19:07:51 by hvayon           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJS		=	$(SRCS:.cpp=.o)
+SRCS = $(wildcard *.cpp)
 
-HEAD		=	./
+OBJC = $(SRCS:.cpp=.o)
 
-NAME		=	basic_templates
+HEAD = $(wildcard *.hpp)
 
-GCC			=	c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FLAGS		=	-Wall -Werror -Wextra -std=c++98
+NAME = whatever
 
-RM			=	rm -f
+CC = c++
 
-%.o:	%.cpp $(wildcard $(HEAD)/*.hpp)
-		$(GCC) $(FLAGS) -c $< -o $@ 
+all: $(NAME)
 
-$(NAME):	$(HEADS) $(OBJS)
-			$(GCC) $(FLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJC) $(HEAD)
+	$(CC) $(FLAGS) $(OBJC) -o $@
 
-all:	$(NAME)
+%.o: %.cpp $(wildcard $(HEAD)/*.hpp)
+	$(CC) $(FLAGS) -c $< -o $@
 
-clean:
-		$(RM) $(OBJS)
+clean: 
+	rm -f $(OBJC)
 
 fclean: clean
-		rm -f $(NAME)
+	rm -f $(NAME)
 
-re:		fclean all
+re: fclean all
 
-.PHONY:	all clean fclean lib bonus
+.PHONY: all clean fclean re
