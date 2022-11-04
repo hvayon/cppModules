@@ -6,7 +6,7 @@
 #    By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 21:51:05 by hvayon            #+#    #+#              #
-#    Updated: 2022/11/04 12:24:42 by hvayon           ###   ########.fr        #
+#    Updated: 2022/11/04 15:44:19 by hvayon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,17 @@ OBJC = $(SRCS:.cpp=.o)
 
 HEAD = $(wildcard *.hpp)
 
+T_FILE = $(wildcard *.tpp)
+
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = whatever
+NAME = array
 
 CC = c++
 
 all: $(NAME)
 
-$(NAME): $(OBJC) $(HEAD)
+$(NAME): $(OBJC) $(HEAD) $(T_FILE)
 	$(CC) $(FLAGS) $(OBJC) -o $@
 
 %.o: %.cpp $(wildcard $(HEAD)/*.hpp)

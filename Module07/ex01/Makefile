@@ -6,7 +6,7 @@
 #    By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 21:51:05 by hvayon            #+#    #+#              #
-#    Updated: 2022/11/04 12:24:42 by hvayon           ###   ########.fr        #
+#    Updated: 2022/11/04 12:51:37 by hvayon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEAD = $(wildcard *.hpp)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = whatever
+NAME = iter
 
 CC = c++
 
