@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 14:30:48 by hvayon            #+#    #+#             */
-/*   Updated: 2022/11/05 15:34:53 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/11/06 12:46:26 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 
 class ObjNotFound : public std::exception
 {
-	public : virtual const char* what() const throw() { 
+	public :
+		const char*	what(void)	const	throw() { 
 		return "Object not found";
 	}
 };
