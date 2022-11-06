@@ -6,7 +6,7 @@
 #    By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 21:51:05 by hvayon            #+#    #+#              #
-#    Updated: 2022/11/06 15:42:41 by hvayon           ###   ########.fr        #
+#    Updated: 2022/11/06 15:57:07 by hvayon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEAD = $(wildcard *.hpp)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = span
+NAME = mutantstack
 
 CC = c++
 

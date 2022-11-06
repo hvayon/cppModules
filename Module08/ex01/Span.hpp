@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:26:20 by hvayon            #+#    #+#             */
-/*   Updated: 2022/11/06 14:42:48 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/11/06 15:47:58 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,9 @@ class Span
 
 	template <typename T>
 	void	addManyNumbers(T begin, T end){
-		// if (static_cast<long long>(std::distance(begin, end)) > static_cast<long long>(_vec.capacity()))
-		// 	throw Span::OutOfRange();
-		while (begin != end)
-		{
-			_vec.push_back(*begin);
-			begin++;
-		}
+		if (static_cast<long long>(std::distance(begin, end)) > static_cast<long long>(_vec.capacity()))
+			throw Span::OutOfRange();
+		_vec.assign(begin, end);
 	}
 };
 

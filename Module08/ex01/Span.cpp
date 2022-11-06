@@ -6,13 +6,16 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:26:16 by hvayon            #+#    #+#             */
-/*   Updated: 2022/11/06 14:43:56 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/11/06 15:44:43 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(unsigned int size) :  _nSize(size) {}
+Span::Span(unsigned int size) :  _nSize(size)
+{
+	this->_vec.reserve(size);
+}
 
 Span::Span (const Span& copy) {
 	*this = copy;

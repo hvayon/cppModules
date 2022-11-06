@@ -6,7 +6,7 @@
 /*   By: hvayon <hvayon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 15:31:33 by hvayon            #+#    #+#             */
-/*   Updated: 2022/11/05 15:51:46 by hvayon           ###   ########.fr       */
+/*   Updated: 2022/11/06 17:28:52 by hvayon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main() {
 	std::vector<int>::iterator	n;
 	for (int i = 0; i < 10; ++i) {
 		arr.push_back(rand() % 9);
-		std::cout << "#" << i + 1 << " : " << arr[i] <<  std::endl;
+		std::cout << "#" << i << " : " << arr[i] <<  std::endl;
 	}
 	while (true) {
 		int			val;
